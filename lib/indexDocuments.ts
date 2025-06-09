@@ -2,9 +2,7 @@ import { embedMany } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { parseDriveFilesWithMetadata } from '@lib/parseWithMetadata';
 import { pineconeIndex } from '@lib/pineconeClient';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { getOrgNamespace } from '@lib/helpers';
 
 type Vector = {
   id: string;
@@ -25,9 +23,19 @@ function chunkText(text: string, chunkSize = 512, overlap = 50): string[] {
   return chunks;
 }
 
-export async function indexDocuments() {
-  console.log('📄 Parsing files with metadata...');
-  const parsedDocs = await parseDriveFilesWithMetadata();
+type IndexDocumentsParams = {
+  folderId: string;
+  namespace: string;
+  client: string;
+};
+
+export async function indexDocuments({
+  folderId,
+  namespace,
+  client,
+}: IndexDocumentsParams) {
+  console.log(`📁 Parsing files from Google Drive folder: ${folderId}`);
+  const parsedDocs = await parseDriveFilesWithMetadata(folderId);
 
   const vectors: Vector[] = [];
 
@@ -41,6 +49,7 @@ export async function indexDocuments() {
       text: chunkText,
       chunk_index: idx,
       file_name: fileName,
+      organization: client,
       ...metadata,
     }));
 
@@ -63,11 +72,10 @@ export async function indexDocuments() {
     return;
   }
 
-  const orgNamespace =
-    process.argv[2] || process.env.PINECONE_NAMESPACE || 'default';
-  console.log(`📡 Upserting ${vectors.length} vectors to Pinecone...`);
+  console.log(
+    `📡 Upserting ${vectors.length} vectors to Pinecone namespace: ${namespace}`
+  );
+  await pineconeIndex.namespace(namespace).upsert(vectors);
 
-  await pineconeIndex.namespace(orgNamespace).upsert(vectors);
-
-  console.log('✅ Indexing complete.');
+  console.log('✅ Indexing complete for namespace:', namespace);
 }

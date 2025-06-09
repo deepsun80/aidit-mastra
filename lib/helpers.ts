@@ -27,3 +27,26 @@ export function formatError(error: unknown, fallback: string) {
 export function getOrgNamespace(org: string) {
   return org.toLowerCase().replace(/\s+/g, '-');
 }
+
+/**
+ * 🧭 getNamespace
+ *
+ * Generates a Pinecone namespace string using client and document type.
+ * Combines both values into a lowercase, dash-separated format to ensure consistency.
+ *
+ * Example:
+ *   getNamespace("paramount", "quality-manuals and procedures")
+ *   → "paramount__quality-manuals-and-procedures"
+ *
+ * 📥 Input:
+ *   - client: string (e.g., "paramount")
+ *   - docType: string (e.g., "quality-manuals and procedures")
+ *
+ * 📤 Output:
+ *   - string: valid Pinecone namespace (e.g., "paramount__quality-manuals-and-procedures")
+ *
+ * ✅ Used to isolate document chunks by type within a single client index.
+ */
+export function getNamespace(client: string, docType: string): string {
+  return `${client.toLowerCase()}__${docType.replace(/\s+/g, '-').toLowerCase()}`;
+}

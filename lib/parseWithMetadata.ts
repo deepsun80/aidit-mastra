@@ -53,16 +53,19 @@ function extractMetadataFromFilename(
 }
 
 /**
- * 📂 Downloads and parses documents from Google Drive,
+ * 📂 Downloads and parses documents from a specific Google Drive folder,
  * 🧠 extracts metadata,
  * 🧾 and returns an array of structured text + metadata.
+ *
+ * 📥 Input:
+ *   - folderId: Google Drive folder ID to fetch files from
  */
-export async function parseDriveFilesWithMetadata(): Promise<
-  ParsedFileWithMetadata[]
-> {
-  console.log('📂 Fetching files from Google Drive...');
+export async function parseDriveFilesWithMetadata(
+  folderId: string
+): Promise<ParsedFileWithMetadata[]> {
+  console.log(`📂 Fetching files from Google Drive folder: ${folderId}...`);
 
-  const files = await fetchGoogleDriveFiles();
+  const files = await fetchGoogleDriveFiles(folderId);
   const targetFiles = files.filter((f) => f.name?.match(/\.(pdf|docx)$/i));
 
   const parsedFiles: ParsedFileWithMetadata[] = [];
