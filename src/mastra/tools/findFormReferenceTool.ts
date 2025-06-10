@@ -1,32 +1,12 @@
-/**
- * 🔎 findFormReferenceTool.ts
- *
- * 📄 Purpose:
- *   Given a form-related query, searches for references to relevant forms inside procedure (SP) documents.
- *   This helps the agent locate the correct form title or doc number when it’s not directly mentioned.
- *
- * 📥 Input:
- *   - query: string (e.g., "Is the supplier evaluation form reviewed by the Quality Manager?")
- *   - procedureCode: string (e.g., "SP") — used to filter the document set
- *   - topK: number — how many chunks to retrieve
- *
- * 📤 Output:
- *   - Array of { text, metadata } chunks from SP docs likely referencing the form
- *
- * ✅ Used when the query implies a form, but the form title/ID needs discovery from a procedure document
- */
-
 import { createTool } from '@mastra/core/tools';
 import { embed } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { pineconeIndex } from '@lib/pineconeClient';
-import { getOrgNamespace } from '@lib/helpers';
+import { rerank } from '@mastra/rag';
 import z from 'zod';
 
 const inputSchema = z.object({
   query: z.string().describe('User query that implies a form'),
-  procedureCode: z.string().describe('Document code for procedures (e.g., SP)'),
-  topK: z.number().default(30).describe('Top K results to return'),
   organization: z.string().describe('Organization to determine namespace'),
 });
 
@@ -47,52 +27,62 @@ export const findFormReferenceTool = createTool<
   inputSchema,
   outputSchema,
   execute: async ({ context }) => {
-    const { query, procedureCode, topK, organization } = context;
+    const { query, organization } = context;
 
     const { embedding } = await embed({
       value: query,
       model: openai.embedding('text-embedding-3-small'),
     });
 
-    const namespace = getOrgNamespace(organization);
+    const namespace = `${organization}__forms`;
+    const topK = 30;
 
     const results = await pineconeIndex.namespace(namespace).query({
-      topK,
       vector: embedding,
-      filter: {
-        docCode: { $eq: procedureCode },
-      },
+      topK,
       includeMetadata: true,
     });
 
-    console.log('findFormReferenceTool raw matches:', results);
+    // ✅ Convert to QueryResult[] for rerank
+    const rawChunks = results.matches.map((match, i) => ({
+      id: match.id,
+      text: String(match.metadata?.text ?? ''),
+      metadata: match.metadata ?? {},
+      score: match.score ?? 0.3,
+    }));
 
-    return results.matches
-      .filter((match) => match.score && match.score > 0.3)
-      .flatMap((match) => {
-        const fullText = String(match.metadata?.text ?? '');
-        const formRefs = Array.from(
-          fullText.matchAll(/\b(FM[-\s]?\d{2,5})([:\-]?\s*)([^\n|\.]{5,100})/gi)
-        );
+    // 🧠 Rerank the Pinecone matches
+    const reranked = await rerank(rawChunks, query, openai('gpt-4o'), {
+      weights: {
+        semantic: 0.5,
+        vector: 0.3,
+        position: 0.2,
+      },
+      topK,
+    });
 
-        if (formRefs.length === 0) {
-          // No specific form match found, still include full chunk
-          return [
-            {
-              text: fullText,
-              metadata: match.metadata ?? {},
-            },
-          ];
-        }
+    return reranked.flatMap(({ result }) => {
+      const fullText = String(result.metadata?.text ?? '');
+      const formRefs = Array.from(
+        fullText.matchAll(/\b(FM[-\s]?\d{2,5})([:\-]?\s*)([^\n|\.]{5,100})/gi)
+      );
 
-        // Else: include full context, but annotate the found match
-        return formRefs.map(([, formNumber, , title]) => ({
-          text: fullText,
-          metadata: {
-            ...match.metadata,
-            formLabel: `${formNumber.toUpperCase()}: ${title.trim()}`,
+      if (formRefs.length === 0) {
+        return [
+          {
+            text: fullText,
+            metadata: result.metadata ?? {},
           },
-        }));
-      });
+        ];
+      }
+
+      return formRefs.map(([, formNumber, , title]) => ({
+        text: fullText,
+        metadata: {
+          ...result.metadata,
+          formLabel: `${formNumber.toUpperCase()}: ${title.trim()}`,
+        },
+      }));
+    });
   },
 });
