@@ -2,7 +2,6 @@ import { embedMany } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { parseDriveFilesWithMetadata } from '@lib/parseWithMetadata';
 import { pineconeIndex } from '@lib/pineconeClient';
-import { getOrgNamespace } from '@lib/helpers';
 
 type Vector = {
   id: string;
@@ -43,7 +42,9 @@ export async function indexDocuments({
     const { text, fileName, metadata } = doc;
     const chunks = chunkText(text);
 
-    console.log(`✂️ ${fileName} → ${chunks.length} chunks`);
+    console.log(
+      `✂️ ${fileName} (page ${metadata.page}) → ${chunks.length} chunks`
+    );
 
     const chunkMetas = chunks.map((chunkText, idx) => ({
       text: chunkText,
@@ -60,7 +61,7 @@ export async function indexDocuments({
 
     embeddings.forEach((embedding, i) => {
       vectors.push({
-        id: `${fileName}-${i}`,
+        id: `${fileName}-page${metadata.page}-chunk${i}`,
         values: embedding,
         metadata: chunkMetas[i],
       });

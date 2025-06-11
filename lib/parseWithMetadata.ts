@@ -2,7 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fetchGoogleDriveFiles, downloadFileContent } from '@lib/googleDrive';
-import { mistralOcrFromFile } from '@lib/mistralOcr';
+import { mistralOcrFromFile, OCRPage } from '@lib/mistralOcr';
 
 /**
  * 🧱 Structure representing a parsed document with attached metadata
@@ -15,6 +15,7 @@ export type ParsedFileWithMetadata = {
     docNumber: string;
     docVersion: string;
     title: string;
+    page: number;
   };
 };
 
@@ -23,7 +24,7 @@ export type ParsedFileWithMetadata = {
  */
 function extractMetadataFromFilename(
   name: string
-): ParsedFileWithMetadata['metadata'] {
+): Omit<ParsedFileWithMetadata['metadata'], 'page'> {
   const baseName = name.replace(/\.(docx|pdf)$/i, '');
 
   // 🔍 Look for document type + number
@@ -79,7 +80,6 @@ export async function parseDriveFilesWithMetadata(
     console.log(`\n📄 Processing: ${file.name}`);
 
     try {
-      // 📥 Download file and write to temp path
       const fileBuffer = await downloadFileContent(file.id);
       if (!fileBuffer) {
         console.warn(`⚠️ Skipping empty file: ${file.name}`);
@@ -89,21 +89,24 @@ export async function parseDriveFilesWithMetadata(
       fs.writeFileSync(tempPath, fileBuffer);
 
       // 🤖 Run OCR using Mistral
-      const text = await mistralOcrFromFile(tempPath);
+      const pages: OCRPage[] = await mistralOcrFromFile(tempPath);
 
       // 🏷️ Extract metadata from filename
-      const metadata = extractMetadataFromFilename(file.name);
+      const baseMetadata = extractMetadataFromFilename(file.name);
 
-      // 📦 Collect parsed document data
-      parsedFiles.push({
-        fileName: file.name,
-        text,
-        metadata,
-      });
+      // 📦 Collect parsed document data for each page
+      for (const page of pages) {
+        parsedFiles.push({
+          fileName: file.name,
+          text: page.text,
+          metadata: {
+            ...baseMetadata,
+            page: page.page,
+          },
+        });
+      }
 
-      console.log(`✅ Parsed ${file.name} →`, metadata);
-
-      // 🧹 Clean up
+      console.log(`✅ Parsed ${file.name} →`, baseMetadata);
       fs.unlinkSync(tempPath);
     } catch (err) {
       console.error(`❌ Failed to parse ${file.name}:`, err);
