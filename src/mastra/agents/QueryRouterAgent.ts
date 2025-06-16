@@ -87,7 +87,8 @@ export const QueryRouterAgent = new Agent({
         - Your final output should be a direct, clear answer (1–2 sentences) to the user query.
         - Format the response in "yes" or "no" format.
         - Avoid adding extra background or padding — be direct.
-        - Include a source citation if available (e.g., title, file_name).
+        - Include a source citation if available, using the format:
+            (e.g., *[Document Title]*, file: *file_name*, page: *page*).
         - Be truthful. Do not hallucinate form numbers or content.
         - If nothing is found, say so clearly.
     `.trim();
