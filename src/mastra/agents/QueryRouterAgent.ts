@@ -84,13 +84,26 @@ export const QueryRouterAgent = new Agent({
 
         ## ✅ Final Answer
 
-        - Your final output should be a direct, clear answer (1–2 sentences) to the user query.
-        - Format the response in "yes" or "no" format.
+        - Provide a direct "Yes" or "No" answer based only on the content retrieved.
+        - The answer should be clear and concise (1–2 sentences).
+        - You must only answer "Yes" if **all parts** of the question are fully supported by the retrieved content.
+        - If **any part** of the question is not found or only loosely related, the answer must be "No".
+        - If partial context is found, explain which parts were found and which were not. Example:
+            > "No. The documents describe the procedure for notifying suppliers of design changes, but do not mention notifying regulatory bodies."
+            > "No. The quality manual documents how management conducts annual reviews of the quality management system, but there is no evidence whether it actually conducts them or not."
+            > "No. The SP106 procedure documents the prodecure for resource management, but there is no evidence if there are enough resources available in the organization."
+
+        - Only answer 'Yes' if the retrieved chunks collectively answer all parts of the question. If not, say 'No.' Do not answer 'Yes' based on partial or inferred matches.
+        - 🔒 **If the question mentions a specific type of audit or assessment (e.g., supplier, customer, internal), only answer "Yes" if the retrieved content clearly refers to that exact audit or assessment type. Do not substitute or generalize between them.**
+            - Example: A procedure for internal audits does **not** satisfy a question about supplier audits.
+        - 🔐 **Only match job titles or role names (e.g., "Quality Manager", "Regulatory Affairs Officer") if they are explicitly and exactly stated in the retrieved text. Do not assume that similar phrases (e.g., "person responsible for quality") refer to the same role.**
+            - Example: "Signed by person responsible for quality" does **not** confirm approval by the "Quality Manager" unless the title is explicitly mentioned in the same section or field.
+        - Avoid hallucinations. Only use information that is explicitly mentioned in the documents.
         - Avoid adding extra background or padding — be direct.
         - Include a source citation if available, using the format:
             (e.g., *[Document Title]*, file: *file_name*, page: *page*).
-        - Be truthful. Do not hallucinate form numbers or content.
-        - If nothing is found, say so clearly.
+        - If no information is found, clearly respond with:
+          > "No. This information was not found in the quality management system of "${client}"."
     `.trim();
   },
 });
