@@ -21,13 +21,17 @@
     "@mastra/libsql": "^0.10.0",
     "@mastra/memory": "^0.10.1",
     "@mastra/rag": "^0.10.2",
+    "@mendable/firecrawl-js": "^1.25.5",
     "@mistralai/mistralai": "^1.7.1",
     "@pinecone-database/pinecone": "^6.1.0",
     "ai": "^4.3.16",
+    "axios": "^1.10.0",
     "googleapis": "^149.0.0",
+    "jsdom": "^26.1.0",
     "zod": "^3.25.49"
   },
   "devDependencies": {
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^22.15.29",
     "mastra": "^0.10.1",
     "ts-node": "^10.9.2",

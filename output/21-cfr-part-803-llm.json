@@ -1,0 +1,535 @@
+{
+  "sections": [
+    {
+      "section": "§ 803.1",
+      "title": "§ 803.1 What does this part cover?",
+      "definitions": [],
+      "requirements": [
+        "Device user facilities must report deaths and serious injuries that a device has or may have caused or contributed to, establish and maintain adverse event files, and submit summary annual reports.",
+        "Manufacturers and importers must report deaths and serious injuries that their device has or may have caused or contributed to, report certain device malfunctions, and establish and maintain adverse event files.",
+        "Manufacturers must submit specified followup reports.",
+        "Medical device distributors must maintain records of incidents but are not required to report these incidents."
+      ]
+    },
+    {
+      "section": "§ 803.3",
+      "title": "§ 803.3 How does FDA define the terms used in this part?",
+      "definitions": [
+        {
+          "term": "Ambulatory surgical facility (ASF)",
+          "definition": "A distinct entity that operates for the primary purpose of furnishing same day outpatient surgical services to patients."
+        },
+        {
+          "term": "Become aware",
+          "definition": "An employee of the entity required to report has acquired information that reasonably suggests a reportable adverse event has occurred."
+        },
+        {
+          "term": "Caused or contributed",
+          "definition": "A death or serious injury was or may have been attributed to a medical device, or that a medical device was or may have been a factor in a death or serious injury."
+        },
+        {
+          "term": "Device user facility",
+          "definition": "A hospital, ambulatory surgical facility, nursing home, outpatient diagnostic facility, or outpatient treatment facility which is not a physician's office."
+        },
+        {
+          "term": "Distributor",
+          "definition": "Any person (other than the manufacturer or importer) who furthers the marketing of a device from the original place of manufacture to the person who makes final delivery or sale to the ultimate user, but who does not repackage or otherwise change the container, wrapper, or labeling of the device or device package."
+        },
+        {
+          "term": "Expected life of a device",
+          "definition": "The time that a device is expected to remain functional after it is placed into use."
+        },
+        {
+          "term": "FDA, we, us, or Agency",
+          "definition": "The Food and Drug Administration."
+        },
+        {
+          "term": "Five-day report",
+          "definition": "A medical device report that must be submitted by a manufacturer to us under § 803.53 within 5 work days."
+        },
+        {
+          "term": "Hospital",
+          "definition": "A distinct entity that operates for the primary purpose of providing diagnostic, therapeutic, surgical, and other patient services for specific and general medical conditions."
+        },
+        {
+          "term": "Importer",
+          "definition": "Any person who imports a device into the United States and who furthers the marketing of a device from the original place of manufacture to the person who makes final delivery or sale to the ultimate user, but who does not repackage or otherwise change the container, wrapper, or labeling of the device or device package."
+        },
+        {
+          "term": "Malfunction",
+          "definition": "The failure of a device to meet its performance specifications or otherwise perform as intended."
+        },
+        {
+          "term": "Manufacturer",
+          "definition": "Any person who manufactures, prepares, propagates, compounds, assembles, or processes a device by chemical, physical, biological, or other procedure."
+        },
+        {
+          "term": "Manufacturer or importer report number",
+          "definition": "A number that uniquely identifies each individual adverse event report submitted by a manufacturer or importer."
+        },
+        {
+          "term": "MDR",
+          "definition": "Medical device report."
+        },
+        {
+          "term": "MDR reportable event (or reportable event)",
+          "definition": "An event that user facilities become aware of that reasonably suggests that a device has or may have caused or contributed to a death or serious injury."
+        },
+        {
+          "term": "Medical personnel",
+          "definition": "An individual who is licensed, registered, or certified by a State, territory, or other governing body, to administer health care."
+        },
+        {
+          "term": "Nursing home",
+          "definition": "An independent entity or one operated by another medical entity that operates for the primary purpose of providing skilled nursing care and related services for persons who require medical or nursing care."
+        },
+        {
+          "term": "Outpatient diagnostic facility",
+          "definition": "A distinct entity that operates for the primary purpose of conducting medical diagnostic tests on patients."
+        },
+        {
+          "term": "Outpatient treatment facility",
+          "definition": "A distinct entity that operates for the primary purpose of providing nonsurgical therapeutic care on an outpatient basis or in a home health care setting."
+        },
+        {
+          "term": "Patient of the facility",
+          "definition": "Any individual who is being diagnosed or treated and/or receiving medical care at or under the control or authority of the facility."
+        },
+        {
+          "term": "Physician's office",
+          "definition": "A facility that operates as the office of a physician or other health care professional for the primary purpose of examination, evaluation, and treatment or referral of patients."
+        },
+        {
+          "term": "Remedial action",
+          "definition": "Any action other than routine maintenance or servicing of a device where such action is necessary to prevent recurrence of a reportable event."
+        },
+        {
+          "term": "Serious injury",
+          "definition": "An injury or illness that is life-threatening, results in permanent impairment of a body function or permanent damage to a body structure, or necessitates medical or surgical intervention to preclude permanent impairment of a body function or permanent damage to a body structure."
+        },
+        {
+          "term": "User facility report number",
+          "definition": "The number that uniquely identifies each report submitted by a user facility to manufacturers and to us."
+        },
+        {
+          "term": "Work day",
+          "definition": "Monday through Friday, except Federal holidays."
+        },
+        {
+          "term": "Human cell, tissue, or cellular or tissue-based product (HCT/P) regulated as a device",
+          "definition": "An HCT/P as defined in § 1271.3(d) of this chapter that does not meet the criteria in § 1271.10(a) and that is also regulated as a device."
+        },
+        {
+          "term": "Unique device identifier (UDI)",
+          "definition": "An identifier that adequately identifies a device through its distribution and use by meeting the requirements of § 830.20 of this chapter."
+        }
+      ],
+      "requirements": [
+        "If an adverse event meets the criteria for reporting, the ASF must report that event regardless of the nature or location of the medical service provided by the ASF.",
+        "If you are a device user facility, you are considered to have 'become aware' when medical personnel obtain information about a reportable event.",
+        "If you are a manufacturer, you are considered to have become aware of an event when any of your employees becomes aware of a reportable event that is required to be reported within 30 calendar days or within 5 work days if requested by the FDA.",
+        "If you are an importer, you are considered to have become aware of an event when any of your employees becomes aware of a reportable event that is required to be reported by you within 30 days.",
+        "If an adverse event meets the criteria for reporting, the hospital must report that event regardless of the nature or location of the medical service provided by the hospital.",
+        "If an adverse event meets the criteria for reporting, the nursing home must report that event regardless of the nature or location of the medical service provided by the nursing home.",
+        "If an adverse event meets the criteria for reporting, the outpatient diagnostic facility must report that event regardless of the nature or location of the medical service provided by the outpatient diagnostic facility.",
+        "If an adverse event meets the criteria for reporting, the outpatient treatment facility must report that event regardless of the nature or location of the medical service provided by the outpatient treatment facility."
+      ]
+    },
+    {
+      "section": "§ 803.9",
+      "title": "§ 803.9 What information from the reports do we disclose to the public?",
+      "definitions": [],
+      "requirements": [
+        "We may disclose to the public any report, including any FDA record of a telephone report, submitted under this part.",
+        "Before we disclose a report to the public, we will delete any information that constitutes trade secret or confidential commercial or financial information.",
+        "Before we disclose a report to the public, we will delete any personal, medical, and similar information, including the serial number of implanted devices, which would constitute an invasion of personal privacy.",
+        "If a patient requests a report, we will disclose to that patient all the information in the report concerning that patient.",
+        "Before we disclose a report to the public, we will delete any names and other identifying information of a third party that voluntarily submitted an adverse event report.",
+        "We may not disclose the identity of a device user facility that makes a report under this part except in specific circumstances such as enforcement actions, communications to manufacturers, or disclosures to certain government entities."
+      ]
+    },
+    {
+      "section": "§ 803.10",
+      "title": "§ 803.10 Generally, what are the reporting requirements that apply to me?",
+      "definitions": [],
+      "requirements": [
+        "If you are a device user facility, you must submit reports of individual adverse events no later than 10 work days after the day that you become aware of a reportable event.",
+        "Device user facilities must submit reports of device-related deaths to the authorities and to the manufacturer, if known.",
+        "Device user facilities must submit reports of device-related serious injuries to the manufacturers or to the authorities if the manufacturer is unknown.",
+        "Device user facilities must submit annual reports to the authorities.",
+        "If you are an importer, you must submit reports of individual adverse events no later than 30 calendar days after the day that you become aware of a reportable event.",
+        "Importers must submit reports of device-related deaths or serious injuries to the authorities and to the manufacturer.",
+        "Importers must submit reports of device-related malfunctions to the manufacturer.",
+        "If you are a manufacturer, you must submit reports of individual adverse events no later than 30 calendar days after the day that you become aware of a reportable death, serious injury, or malfunction.",
+        "Manufacturers must submit reports of individual adverse events no later than 5 work days after the day that they become aware of a reportable event that requires remedial action to prevent an unreasonable risk of substantial harm to the public health.",
+        "Manufacturers must submit reports of individual adverse events no later than 5 work days after the day that they become aware of a reportable event for which the authorities made a written request.",
+        "Manufacturers must submit supplemental reports if they obtain information that was not submitted in an initial report."
+      ]
+    },
+    {
+      "section": "§ 803.11",
+      "title": "§ 803.11 What form should I use to submit reports of individual adverse events and where do I obtain these forms?",
+      "definitions": [],
+      "requirements": [
+        "Manufacturers or importers must submit reports of individual adverse events to FDA in an electronic format unless granted an exemption.",
+        "Importer reports submitted to device manufacturers may be in paper format or an electronic format that includes all required data fields.",
+        "User facilities must submit reports of individual adverse events in accordance with specified regulations.",
+        "Form FDA 3500A is available on the internet."
+      ]
+    },
+    {
+      "section": "§ 803.12",
+      "title": "§ 803.12 How do I submit initial and supplemental or followup reports?",
+      "definitions": [],
+      "requirements": [
+        "Manufacturers and importers must submit initial and supplemental or followup reports to FDA in an electronic format that FDA can process, review, and archive.",
+        "User facilities that submit their reports and additional information to FDA electronically must use an electronic format that FDA can process, review, and archive.",
+        "User facilities that submit their reports to FDA on paper must submit any written report or additional information required under this part to FDA, CDRH, Medical Device Reporting, P.O. Box 3002, Rockville, MD 20847-3002, using Form FDA 3500A.",
+        "Each report must be identified (e.g., 'User Facility Report' or 'Annual Report').",
+        "If confronted with a public health emergency, this can be brought to FDA's attention by contacting FDA's Office of Crisis Management, Emergency Operations Center by telephone, 24-hours a day, at 301-796-8240 or toll free at 866-300-4374, followed by the submission of an email to: emergency.operations@fda.hhs.gov.",
+        "You may submit a voluntary telephone report to the MedWatch office at 800-FDA-1088.",
+        "You may obtain information regarding voluntary reporting from the MedWatch office at 800-FDA-1088.",
+        "You may find the voluntary Form FDA 3500 and instructions to complete it at: http://www.fda.gov/Safety/MedWatch/HowToReport/DownloadForms/default.htm."
+      ]
+    },
+    {
+      "section": "§ 803.13",
+      "title": "§ 803.13 Do I need to submit reports in English?",
+      "definitions": [],
+      "requirements": [
+        "You must submit all reports required by this part in English."
+      ]
+    },
+    {
+      "section": "§ 803.15",
+      "title": "§ 803.15 How will I know if you require more information about my medical device report?",
+      "definitions": [],
+      "requirements": [
+        "We will notify you in writing if we require additional information and will tell you what information we need.",
+        "We will require additional information if we determine that protection of the public health requires additional or clarifying information for medical device reports submitted to us and in cases when the additional information is beyond the scope of FDA reporting forms or is not readily accessible to us.",
+        "In any request under this section, we will state the reason or purpose for the information request, specify the due date for submitting the information, and clearly identify the reported event(s) related to our request.",
+        "If we verbally request additional information, we will confirm the request in writing."
+      ]
+    },
+    {
+      "section": "§ 803.16",
+      "title": "§ 803.16 When I submit a report, does the information in my report constitute an admission that the device caused or contributed to the reportable event?",
+      "definitions": [],
+      "requirements": [
+        "A report or other information submitted by you is not necessarily an admission that the device, or you or your employees, caused or contributed to the reportable event.",
+        "You do not have to admit and may deny that the report or information submitted under this part constitutes an admission that the device, you, or your employees, caused or contributed to a reportable event."
+      ]
+    },
+    {
+      "section": "§ 803.17",
+      "title": "§ 803.17 What are the requirements for developing, maintaining, and implementing written MDR procedures that apply to me?",
+      "definitions": [],
+      "requirements": [
+        "You must develop, maintain, and implement written MDR procedures for internal systems that provide for timely and effective identification, communication, and evaluation of events that may be subject to MDR requirements.",
+        "You must develop, maintain, and implement written MDR procedures for a standardized review process or procedure for determining when an event meets the criteria for reporting under this part.",
+        "You must develop, maintain, and implement written MDR procedures for the timely transmission of complete medical device reports to manufacturers or to us, or to both if required.",
+        "You must develop, maintain, and implement written MDR procedures for documentation and recordkeeping requirements for information that was evaluated to determine if an event was reportable.",
+        "You must develop, maintain, and implement written MDR procedures for documentation and recordkeeping requirements for all medical device reports and information submitted to manufacturers and/or us.",
+        "You must develop, maintain, and implement written MDR procedures for documentation and recordkeeping requirements for any information that was evaluated for the purpose of preparing the submission of annual reports.",
+        "You must develop, maintain, and implement written MDR procedures for systems that ensure access to information that facilitates timely followup and inspection by us."
+      ]
+    },
+    {
+      "section": "§ 803.18",
+      "title": "§ 803.18 What are the requirements for establishing and maintaining MDR files or records that apply to me?",
+      "definitions": [
+        {
+          "term": "MDR event files",
+          "definition": "Written or electronic files maintained by user facilities, importers, and manufacturers that may incorporate references to other information in lieu of copying and maintaining duplicates."
+        }
+      ],
+      "requirements": [
+        "If you are a user facility, importer, or manufacturer, you must establish and maintain MDR event files and clearly identify them to facilitate timely access.",
+        "Your MDR event files must contain information related to the adverse event, including documentation of deliberations and decision-making processes, copies of all reports submitted, and electronic acknowledgments from the FDA.",
+        "You must permit any authorized FDA employee, at all reasonable times, to access, copy, and verify the records required by this part.",
+        "If you are a user facility, you must retain an MDR event file for a period of 2 years from the date of the event.",
+        "If you are a manufacturer or importer, you must retain an MDR event file for a period of 2 years from the date of the event or a period equivalent to the expected life of the device, whichever is greater.",
+        "If you are a device distributor, you must establish and maintain device complaint records containing incident information and evaluation of allegations.",
+        "You must retain device incident records for 2 years from the date of inclusion in the file or for a period equivalent to the expected life of the device, whichever is greater.",
+        "You must maintain device complaint files at your principal business establishment and permit FDA access.",
+        "If you are a manufacturer, you may maintain MDR event files as part of your complaint file under part 820, provided they are prominently identified as MDR reportable events.",
+        "You must document and maintain an explanation in your MDR event files for any information not submitted or obtained, as well as the results of your evaluation of each event."
+      ]
+    },
+    {
+      "section": "§ 803.19",
+      "title": "§ 803.19 Are there exemptions, variances, or alternative forms of adverse event reporting requirements?",
+      "definitions": [],
+      "requirements": [
+        "Licensed practitioners who prescribe or administer devices intended for use in humans and manufacture or import devices solely for use in diagnosing and treating persons with whom they have a physician-patient relationship are exempt from adverse event reporting requirements.",
+        "Individuals who manufacture devices intended for use in humans solely for personal use in research or teaching and not for sale are exempt from adverse event reporting requirements.",
+        "Dental laboratories or optical laboratories are exempt from adverse event reporting requirements.",
+        "Manufacturers, importers, or user facilities may request an exemption or variance from any or all of the reporting requirements by submitting a written request to the Center for Devices and Radiological Health (CDRH).",
+        "Requests for exemption from electronic format reporting must indicate the duration for which the exemption is required.",
+        "The FDA may grant in writing an exemption, variance, or alternative to any or all of the reporting requirements and may change the frequency of reporting.",
+        "The FDA may impose other reporting requirements when granting modifications to ensure the protection of public health.",
+        "The FDA may revoke or modify in writing an exemption, variance, or alternative reporting requirement if necessary to protect public health.",
+        "If a reporting modification is granted, the entity must submit any reports or information required in the approval of the modification."
+      ]
+    },
+    {
+      "section": "§ 803.20",
+      "title": "§ 803.20 How do I complete and submit an individual adverse event report?",
+      "definitions": [
+        {
+          "term": "MDR reportable event",
+          "definition": "A death, a serious injury, or, if you are a manufacturer or importer, a malfunction that would be likely to cause or contribute to a death or serious injury if the malfunction were to recur."
+        },
+        {
+          "term": "Persons qualified to make a medical judgment",
+          "definition": "Include physicians, nurses, risk managers, and biomedical engineers."
+        }
+      ],
+      "requirements": [
+        "Health professionals, consumers, or other entities may submit voluntary reports to FDA using Form FDA 3500.",
+        "A user facility must use Form FDA 3500A to submit a mandatory report in written form.",
+        "An electronic submission of a mandatory report must contain information from the applicable blocks of Form FDA 3500A.",
+        "All electronic submissions must include information about the patient, the event, the device, and the 'initial reporter.'",
+        "An electronic submission from a user facility or importer must include the information from block F.",
+        "An electronic submission from a manufacturer must include the information from blocks G and H.",
+        "Manufacturers must incorporate information received from a user facility or importer in their electronic submission and include any corrected or missing information.",
+        "User facilities must submit MDR reports to the manufacturer and to the FDA no later than 10 work days after becoming aware of information suggesting a device has or may have caused or contributed to a death.",
+        "User facilities must submit MDR reports to the manufacturer no later than 10 work days after becoming aware of information suggesting a device has or may have caused or contributed to a serious injury, or to the FDA if the manufacturer is not known.",
+        "Importers must submit MDR reports to the manufacturer and to the FDA no later than 30 calendar days after becoming aware of information suggesting a device has or may have caused or contributed to a death or serious injury.",
+        "Importers must submit MDR reports to the manufacturer no later than 30 calendar days after receiving information that a device has malfunctioned and would likely cause or contribute to a death or serious injury if the malfunction were to recur.",
+        "Manufacturers must submit MDR reports to the FDA no later than 30 calendar days after becoming aware of information suggesting a device may have caused or contributed to a death or serious injury.",
+        "Manufacturers must submit MDR reports to the FDA no later than 30 calendar days after becoming aware of information suggesting a device has malfunctioned and would likely cause or contribute to a death or serious injury if the malfunction were to recur.",
+        "Manufacturers must submit MDR reports to the FDA within 5 work days if required by § 803.53.",
+        "User facilities, importers, or manufacturers do not have to report an adverse event if qualified medical judgment concludes that a device did not cause or contribute to a death or serious injury, or that a malfunction would not likely cause or contribute to a death or serious injury if it were to recur.",
+        "User facilities, importers, or manufacturers must keep in their MDR event files the information used by a qualified person to determine whether or not a device-related event was reportable."
+      ]
+    },
+    {
+      "section": "§ 803.21",
+      "title": "§ 803.21 Where can I find the reporting codes for adverse events that I use with medical device reports?",
+      "definitions": [],
+      "requirements": [
+        "The MedWatch Medical Device Reporting Code Instruction Manual contains adverse event codes for use with Form FDA 3500A and can be obtained from FDA's website.",
+        "If the FDA makes modifications to the existing codes, they will ensure that the new coding information is made available to all reporters."
+      ]
+    },
+    {
+      "section": "§ 803.22",
+      "title": "§ 803.22 What are the circumstances in which I am not required to file a report?",
+      "definitions": [],
+      "requirements": [
+        "If you become aware of information from multiple sources regarding the same patient and same reportable event, you may submit one medical device report.",
+        "You are not required to submit a medical device report if you are a user facility, importer, or manufacturer, and you determine that the information received is erroneous in that a device-related adverse event did not occur.",
+        "You must retain documentation of erroneous reports in your MDR files for the time periods specified in § 803.18.",
+        "You are not required to submit a medical device report if you are a manufacturer or importer and you did not manufacture or import the device about which you have adverse event information.",
+        "When you receive reportable event information in error, you must forward this information to us with a cover letter explaining that you did not manufacture or import the device in question."
+      ]
+    },
+    {
+      "section": "§ 803.23",
+      "title": "§ 803.23 Where can I find information on how to prepare and submit an MDR in electronic format?",
+      "definitions": [],
+      "requirements": [
+        "You may obtain information on how to prepare and submit reports in an electronic format that FDA can process, review, and archive at the specified FDA website.",
+        "We may update information on how to prepare and submit reports electronically and will alert reporters by updating the eMDR Web page."
+      ]
+    },
+    {
+      "section": "§ 803.30",
+      "title": "§ 803.30 If I am a user facility, what reporting requirements apply to me?",
+      "definitions": [
+        {
+          "term": "reasonably known",
+          "definition": "Information found in documents that you possess and any information that becomes available as a result of reasonable followup within your facility."
+        }
+      ],
+      "requirements": [
+        "You must submit reports to the manufacturer or to us, or both, as specified in paragraphs (a)(1) and (a)(2) of this section.",
+        "You must submit a report to us as soon as practicable but no more than 10 work days after becoming aware of information suggesting a device has or may have caused or contributed to the death of a patient.",
+        "You must submit the report of death to the device manufacturer, if known.",
+        "You must submit the information required by § 803.32.",
+        "Reports sent to the Agency must be submitted in accordance with the requirements of § 803.12(b).",
+        "You must submit a report to the manufacturer of the device no later than 10 work days after becoming aware of information suggesting a device has or may have caused or contributed to a serious injury.",
+        "If the manufacturer is not known, you must submit the report to us.",
+        "You must submit all information required in this subpart C that is reasonably known to you."
+      ]
+    },
+    {
+      "section": "§ 803.32",
+      "title": "§ 803.32 If I am a user facility, what information must I submit in my individual adverse event reports?",
+      "definitions": [
+        {
+          "term": "Serious injury",
+          "definition": "An outcome considered a serious injury if it is a life-threatening injury or illness, a disability resulting in permanent impairment of a body function or permanent damage to a body structure, or an injury or illness that requires intervention to prevent permanent impairment of a body structure or function."
+        }
+      ],
+      "requirements": [
+        "You must submit patient name or other identifier.",
+        "You must submit patient age at the time of event, or date of birth.",
+        "You must submit patient gender.",
+        "You must submit patient weight.",
+        "You must submit identification of adverse event or product problem.",
+        "You must submit outcomes attributed to the adverse event.",
+        "You must submit date of event.",
+        "You must submit date of this report.",
+        "You must submit description of event or problem, including a discussion of how the device was involved, nature of the problem, patient followup or required treatment, and any environmental conditions that may have influenced the event.",
+        "You must submit description of relevant tests, including dates and laboratory data.",
+        "You must submit description of other relevant history, including preexisting medical conditions.",
+        "You must submit brand name of the device.",
+        "You must submit product code, if known, and common device name.",
+        "You must submit manufacturer name, city, and state.",
+        "You must submit model number, catalog number, serial number, lot number, or other identifying number; expiration date; and unique device identifier (UDI) that appears on the device label or on the device package.",
+        "You must submit operator of the device (health professional, lay user/patient, other).",
+        "You must submit date of device implantation, if applicable.",
+        "You must submit date of device explantation, if applicable.",
+        "You must indicate whether the device is a single-use device that was reprocessed and reused on a patient.",
+        "If the device is a single-use device that was reprocessed and reused on a patient, you must submit the name and address of the reprocessor.",
+        "You must indicate whether the device was available for evaluation and whether the device was returned to the manufacturer; if so, the date it was returned to the manufacturer.",
+        "You must submit concomitant medical products and therapy dates, excluding products used to treat the event.",
+        "You must submit name, address, and telephone number of the reporter who initially provided information to you, or to the manufacturer or distributor.",
+        "You must indicate whether the initial reporter is a health professional.",
+        "You must submit occupation of the initial reporter.",
+        "You must indicate whether the initial reporter also sent a copy of the report to us, if known.",
+        "You must indicate that this is a user facility report by marking the user facility box on the form.",
+        "You must submit your user facility number.",
+        "You must submit your address.",
+        "You must submit your contact person.",
+        "You must submit your contact person's telephone number.",
+        "You must submit date that you became aware of the event.",
+        "You must submit type of report (initial or followup); if it is a followup, you must include the report number of the initial report.",
+        "You must submit date of your report.",
+        "You must submit approximate age of device.",
+        "You must submit event problem codes—patient code and device code.",
+        "You must indicate whether a report was sent to us and the date it was sent.",
+        "You must submit location where the event occurred.",
+        "You must indicate whether the report was sent to the manufacturer and the date it was sent.",
+        "You must submit manufacturer name and address, if available."
+      ]
+    },
+    {
+      "section": "§ 803.33",
+      "title": "§ 803.33 If I am a user facility, what must I include when I submit an annual report?",
+      "definitions": [],
+      "requirements": [
+        "You must submit to us an annual report on Form FDA 3419 by January 1 of each year.",
+        "You must clearly identify your annual report and submit it to FDA, CDRH, Medical Device Reporting, P.O. Box 3002, Rockville, MD 20847-3002.",
+        "Your annual report must include your CMS provider number or the number assigned by us for reporting purposes.",
+        "Your annual report must include the reporting year.",
+        "Your annual report must include your name and complete address.",
+        "Your annual report must include the total number of reports attached or summarized.",
+        "Your annual report must include the date of the annual report and report numbers identifying the range of medical device reports submitted during the report period.",
+        "Your annual report must include the name, position title, and complete address of the individual designated as your contact person responsible for reporting to us and whether that person is a new contact.",
+        "Your annual report must include information for each reportable event that occurred during the annual reporting period.",
+        "In lieu of submitting detailed information for each reportable event, you may submit a copy of each medical device report submitted to the manufacturers and/or to us during the reporting period.",
+        "If you did not submit any medical device reports to manufacturers or us during the time period, you do not need to submit an annual report."
+      ]
+    },
+    {
+      "section": "§ 803.40",
+      "title": "§ 803.40 If I am an importer, what reporting requirements apply to me?",
+      "definitions": [],
+      "requirements": [
+        "You must submit a report to us, and a copy of this report to the manufacturer, as soon as practicable, but no later than 30 calendar days after the day that you receive or otherwise become aware of information that reasonably suggests that one of your marketed devices may have caused or contributed to a death or serious injury.",
+        "You must submit the information required by § 803.42.",
+        "Reports sent to the Agency must be submitted in accordance with the requirements of § 803.12(a).",
+        "You must submit a report to the manufacturer as soon as practicable but no later than 30 calendar days after the day that you receive or otherwise become aware of information that reasonably suggests that one of your devices has malfunctioned and that this device or a similar device that you market would be likely to cause or contribute to a death or serious injury if the malfunction were to recur.",
+        "Reports to manufacturers may be made in accordance with § 803.11(b)."
+      ]
+    },
+    {
+      "section": "§ 803.42",
+      "title": "§ 803.42 If I am an importer, what information must I submit in my individual adverse event reports?",
+      "definitions": [
+        {
+          "term": "Serious injury",
+          "definition": "An outcome is considered a serious injury if it is a life-threatening injury or illness, a disability resulting in permanent impairment of a body function or permanent damage to a body structure, or an injury or illness that requires intervention to prevent permanent impairment of a body structure or function."
+        }
+      ],
+      "requirements": [
+        "You must submit patient information including patient name or other identifier, age at the time of event or date of birth, gender, and weight.",
+        "You must submit information on the adverse event or product problem including identification, outcomes, date of event, date of report, description of the event, relevant tests, and patient history.",
+        "You must submit device information including brand name, product code, manufacturer details, model and serial numbers, operator of the device, dates of implantation and explanation, reprocessing details, availability for evaluation, and concomitant medical products.",
+        "You must submit initial reporter information including name, address, telephone number, occupation, and whether a copy of the report was sent to the FDA.",
+        "You must submit importer information including indication of importer report, report number, address, contact person details, awareness date of the event, type of report, report date, device age, event problem codes, report submission details to FDA and manufacturer, and manufacturer name and address."
+      ]
+    },
+    {
+      "section": "§ 803.50",
+      "title": "§ 803.50 If I am a manufacturer, what reporting requirements apply to me?",
+      "definitions": [
+        {
+          "term": "reasonably known",
+          "definition": "Information that you can obtain by contacting a user facility, importer, or other initial reporter; any information in your possession; or any information that you can obtain by analysis, testing, or other evaluation of the device."
+        }
+      ],
+      "requirements": [
+        "If you are a manufacturer, you must report the information required by § 803.52 in accordance with the requirements of § 803.12(a), no later than 30 calendar days after becoming aware of information suggesting a device you market may have caused or contributed to a death or serious injury, or has malfunctioned in a way that would likely cause or contribute to a death or serious injury if it recurred.",
+        "You must submit all information required in subpart E that is reasonably known to you.",
+        "You are responsible for obtaining and submitting information that is incomplete or missing from reports submitted by user facilities, importers, and other initial reporters.",
+        "You are responsible for conducting an investigation of each event and evaluating the cause of the event.",
+        "If you cannot submit complete information on a report, you must provide a statement explaining why the information was incomplete and the steps you took to obtain it.",
+        "If you later obtain any required information that was not available at the time you filed your initial report, you must submit this information in a supplemental report under § 803.56 in accordance with the requirements of § 803.12(a)."
+      ]
+    },
+    {
+      "section": "§ 803.52",
+      "title": "§ 803.52 If I am a manufacturer, what information must I submit in my individual adverse event reports?",
+      "definitions": [
+        {
+          "term": "Serious injury",
+          "definition": "An outcome is considered a serious injury if it is a life-threatening injury or illness, a disability resulting in permanent impairment of a body function or permanent damage to a body structure, or an injury or illness that requires intervention to prevent permanent impairment of a body structure or function."
+        }
+      ],
+      "requirements": [
+        "You must submit patient name or other identifier, patient age at the time of event, or date of birth, patient gender, and patient weight.",
+        "You must submit identification of adverse event or product problem, outcomes attributed to the adverse event, date of event, date of this report, description of the event or problem, description of relevant tests, and other relevant patient history.",
+        "You must submit brand name, product code if known, common device name, manufacturer name, city, and state, model number, catalog number, serial number, lot number, or other identifying number, expiration date, and unique device identifier.",
+        "You must submit operator of the device, date of device implantation if applicable, date of device explantation if applicable, whether the device is a single-use device that was reprocessed and reused on a patient, and if so, the name and address of the reprocessor.",
+        "You must submit whether the device was available for evaluation, whether the device was returned to the manufacturer, and if so, the date it was returned to the manufacturer, and concomitant medical products and therapy dates.",
+        "You must submit name, address, and telephone number of the reporter who initially provided information, whether the initial reporter is a health professional, occupation, and whether the initial reporter also sent a copy of the report to the FDA.",
+        "You must submit your reporting office's contact name and address, device manufacturing site, your contact person's telephone number, your report sources, date received by you, PMA/510k Number, whether the product is a combination product, type of report being submitted, and your report number.",
+        "You must submit type of reportable event, type of followup report if applicable, summary of the evaluation if the device was returned and evaluated, device manufacture date, whether the device was labeled for single use, evaluation codes, whether remedial action was taken, and whether the use of the device was initial, reuse, or unknown.",
+        "You must submit whether remedial action was reported as a removal or correction under section 519(f) of the Federal Food, Drug, and Cosmetic Act, and if it was, provide the correction/removal report number.",
+        "You must submit your additional narrative and/or corrected data, including any information missing on the user facility report or importer report, and for each event code provided by the user facility or the importer, include a statement of whether the type of the event represented by the code is addressed in the device labeling.",
+        "If your report omits any required information, you must explain why this information was not provided and the steps taken to obtain this information."
+      ]
+    },
+    {
+      "section": "§ 803.53",
+      "title": "§ 803.53 If I am a manufacturer, in which circumstances must I submit a 5-day report?",
+      "definitions": [],
+      "requirements": [
+        "You must submit a 5-day report to us with the information required by § 803.52 in accordance with the requirements of § 803.12(a) no later than 5 work days after the day that you become aware that an MDR reportable event necessitates remedial action to prevent an unreasonable risk of substantial harm to the public health.",
+        "You must submit a 5-day report if we have made a written request for the submission of a 5-day report.",
+        "If you receive a written request from us, you must submit, without further requests, a 5-day report for all subsequent events of the same nature that involve substantially similar devices for the time period specified in the written request."
+      ]
+    },
+    {
+      "section": "§ 803.56",
+      "title": "§ 803.56 If I am a manufacturer, in what circumstances must I submit a supplemental or followup report and what are the requirements for such reports?",
+      "definitions": [],
+      "requirements": [
+        "If you are a manufacturer, when you obtain information required under this part that you did not provide because it was not known or was not available when you submitted the initial report, you must submit the supplemental information to us within 30 calendar days of the day that you receive this information.",
+        "You must submit the supplemental or followup report in accordance with the requirements of § 803.12(a).",
+        "On a supplemental or followup report, you must indicate that the report being submitted is a supplemental or followup report.",
+        "You must submit the appropriate identification numbers of the report that you are updating with the supplemental information, if applicable.",
+        "You must include only the new, changed, or corrected information in the supplemental or followup report."
+      ]
+    },
+    {
+      "section": "§ 803.58",
+      "title": "§ 803.58 Foreign manufacturers.",
+      "definitions": [],
+      "requirements": [
+        "Every foreign manufacturer whose devices are distributed in the United States shall designate a U.S. agent to be responsible for reporting in accordance with § 807.40 of this chapter.",
+        "Foreign manufacturers shall inform FDA, by letter, of the name and address of the U.S. agent designated under this section and § 807.40 of this chapter, and shall update this information as necessary.",
+        "Updated information regarding the U.S. agent shall be submitted to FDA within 5 days of a change in the designated agent information.",
+        "U.S.-designated agents of foreign manufacturers are required to report to FDA in accordance with §§ 803.50, 803.52, 803.53, and 803.56.",
+        "U.S.-designated agents must conduct, or obtain from the foreign manufacturer the necessary information regarding, the investigation and evaluation of the event to comport with the requirements of § 803.50.",
+        "U.S.-designated agents must forward MDR complaints to the foreign manufacturer and maintain documentation of this requirement.",
+        "U.S.-designated agents must maintain complaint files in accordance with § 803.18.",
+        "U.S.-designated agents must register, list, and submit premarket notifications in accordance with part 807 of this chapter."
+      ]
+    }
+  ]
+}
