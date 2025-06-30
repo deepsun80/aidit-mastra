@@ -35,19 +35,23 @@ function getDriveClient(scope: string) {
   return google.drive({ version: 'v3', auth });
 }
 
-/** 📂 Fetches files from the specified Google Drive folder */
-export async function fetchGoogleDriveFiles(folderType?: 'ocr') {
+/**
+ * 📂 Fetches files from the specified Google Drive folder.
+ *
+ * Use this to retrieve files for a specific upsert target or OCR workflow.
+ *
+ * 📥 Input:
+ *   - folderId: string (explicit Google Drive folder ID to fetch from)
+ *   - label: optional display label for logging (e.g., "forms" or "OCR")
+ */
+export async function fetchGoogleDriveFiles(folderId: string, label?: string) {
   const drive = getDriveClient(
     'https://www.googleapis.com/auth/drive.readonly'
   );
-  const folderId =
-    folderType === 'ocr' ? GOOGLE_DRIVE_FOLDER_OCR_ID : GOOGLE_DRIVE_FOLDER_ID;
 
   if (!folderId) {
     throw new Error(
-      `Missing Google Drive Folder ID for ${
-        folderType === 'ocr' ? 'OCR' : 'default'
-      } folder`
+      `Missing Google Drive Folder ID for ${label ?? 'unspecified'} folder`
     );
   }
 
@@ -61,14 +65,12 @@ export async function fetchGoogleDriveFiles(folderType?: 'ocr') {
 
     const files = response.data.files || [];
     console.log(
-      `📂 Fetched ${files.length} files from Google Drive (${
-        folderType ?? 'default'
-      } folder)`
+      `📂 Fetched ${files.length} files from Google Drive${label ? ` (${label})` : ''}`
     );
 
     return files;
   } catch (error) {
-    console.error('Error fetching files from Google Drive:', error);
+    console.error('❌ Error fetching files from Google Drive:', error);
     throw new Error(
       `Error fetching files from Google Drive: ${formatError(
         error,
