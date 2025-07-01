@@ -9,7 +9,7 @@ export const mastra = new Mastra({
     url: ':memory:', // Change to 'file:../mastra.db' if persistence is needed
   }),
   logger: new PinoLogger({
-    name: 'AiDit Agent',
+    name: 'Ai.DIT Agent',
     level: 'info',
   }),
 });

@@ -125,7 +125,7 @@ export const QueryRouterAgent = new Agent({
       - Avoid adding extra background or padding — be direct.
 
       - If a source citation is available, include it on a new line using the format:
-          Citation: *[Document Title]*, file: *file_name*, page: *page*
+          Citation: Document Title; File: file-name; Page: page
 
       - If no information is found, clearly respond with:
         > "No. This information was not found in the quality management system of \`${client}\`."
