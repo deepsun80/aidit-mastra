@@ -19,12 +19,8 @@ export const QueryRouterAgent = new Agent({
   },
   instructions: ({ runtimeContext }) => {
     const client = runtimeContext.get('clientOrganization');
-
-    console.log(
-      '[Agent] clientOrganization =',
-      runtimeContext.get('clientOrganization')
-    );
-    console.log('[Agent] resolved org =', client);
+    if (!client)
+      throw new Error('Missing clientOrganization in runtimeContext');
 
     return `
       You are an intelligent assistant for audit preparation at a medical device manufacturer.
