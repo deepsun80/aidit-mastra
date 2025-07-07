@@ -18,9 +18,10 @@ export const QueryRouterAgent = new Agent({
     queryRegulationTool,
   },
   instructions: ({ runtimeContext }) => {
-    const client = runtimeContext.get('clientOrganization');
-    if (!client)
-      throw new Error('Missing clientOrganization in runtimeContext');
+    const client = runtimeContext.get('clientOrganization') ?? 'UNKNOWN_ORG';
+    if (client === 'UNKNOWN_ORG') {
+      return `No organization was set in the runtime context. Please provide a valid clientOrganization.`;
+    }
 
     return `
       You are an intelligent assistant for audit preparation at a medical device manufacturer.
