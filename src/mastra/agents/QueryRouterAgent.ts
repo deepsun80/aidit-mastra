@@ -18,10 +18,13 @@ export const QueryRouterAgent = new Agent({
     queryRegulationTool,
   },
   instructions: ({ runtimeContext }) => {
-    const client =
-      runtimeContext.get('clientOrganization') ||
-      runtimeContext.get('organization') ||
-      'paramount';
+    const client = runtimeContext.get('clientOrganization');
+
+    console.log(
+      '[Agent] clientOrganization =',
+      runtimeContext.get('clientOrganization')
+    );
+    console.log('[Agent] resolved org =', client);
 
     return `
       You are an intelligent assistant for audit preparation at a medical device manufacturer.
